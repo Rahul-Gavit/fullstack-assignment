@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 const HelpCenter = () => {
   const [cardDetails, setCardDetails] = useState([]);
@@ -11,8 +12,9 @@ const HelpCenter = () => {
   const fetchCardDetails = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8080/api/cards");
+      const response = await fetch(`${process.env.REACT_APP_URL}api/cards`);
       const data = await response.json();
+      // http://localhost:8080/
 
       console.log(data);
       setCardDetails(data);
@@ -25,7 +27,9 @@ const HelpCenter = () => {
   const searchFilteredData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8080/api/cards/${search}`);
+      const response = await fetch(
+        `${process.env.REACT_APP_URL}api/cards/${search}`
+      );
       const data = await response.json();
       console.log(data);
       setCardDetails(data);
@@ -42,18 +46,7 @@ const HelpCenter = () => {
   return (
     <div>
       <div className="h-96 bg-indigo-100">
-        <div className="bg-black  rounded-t-xl text-white py-4 flex justify-between items-center px-8">
-          <div className="space-x-2">
-            <span>Abstract</span>
-            <span>|</span>
-            <span>Help Center</span>
-          </div>
-          <div>
-            <button className="border rounded-md border-gray-300 opacity-70 text-white px-4 py-1">
-              Submit a request
-            </button>
-          </div>
-        </div>
+        <NavBar />
 
         <div className="flex flex-col items-center justify-center gap-y-4 mt-20">
           <h1 className="text-4xl font-semibold text-center mt-4">

@@ -76,11 +76,10 @@ To run the project, follow these steps:
 
    ```
 
+   ```
    Replace `<your_mongodb_url>` with the actual URL of your MongoDB database.
 
    This will allow your backend app to establish a connection with the MongoDB database. Make sure to include the `.env` file in your `.gitignore` to keep your credentials secure.
-
-   ```
 
    ```
 

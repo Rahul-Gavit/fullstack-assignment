@@ -44,7 +44,23 @@ To run the project, follow these steps:
 
    - Navigate to the `frontend` folder.
    - Install the dependencies by running `npm install`.
+
    - Start the frontend server by running `npm start`.
+
+   ```
+   To access the Backend Apis, please make sure to create a `.env` file in the root directory of your frontend app. In the `.env` file, add the following line:
+
+   REACT_APP_URL=<your_react_app_url>
+   ```
+
+   ```
+
+   Replace `<your_react_app_url>` with the actual URL of your backend server.
+
+   This will allow your frontend to connect to the backend app Make sure to include the `.env` file in your `.gitignore` to keep your credentials secure.
+
+
+   ```
 
 3. **Backend:**
 
@@ -52,20 +68,26 @@ To run the project, follow these steps:
    - Install the dependencies by running `npm install`.
    - Start the backend server by running `npm start`.
 
+   ```
+
+   ```
+
+   To access the MongoDB URL, please make sure to create a `.env` file in the root directory of your backend app. In the `.env` file, add the following line:
+
+   MONGODB_URL=<your_mongodb_url>
+
+   ```
+
+   Replace `<your_mongodb_url>` with the actual URL of your MongoDB database.
+
+   This will allow your backend app to establish a connection with the MongoDB database. Make sure to include the `.env` file in your `.gitignore` to keep your credentials secure.
+
+   ```
+
 4. **Access the Application:**
    - Open your web browser and go to `http://localhost:3000` to access the application.
 
 Remember to stop the servers by pressing `Ctrl + C` in the terminal when you are done.
-
-To access the MongoDB URL, please make sure to create a `.env` file in the root directory of your backend app. In the `.env` file, add the following line:
-
-```
-MONGODB_URL=<your_mongodb_url>
-```
-
-Replace `<your_mongodb_url>` with the actual URL of your MongoDB database.
-
-This will allow your backend app to establish a connection with the MongoDB database. Make sure to include the `.env` file in your `.gitignore` to keep your credentials secure.
 
 To create card data, you can send a POST request to the backend server. Here are the steps to do that:
 
